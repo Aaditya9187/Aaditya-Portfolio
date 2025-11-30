@@ -77,20 +77,20 @@ const Welcome = () => {
       <p ref={subtitleRef}>
         {renderText(
           "Hey, I'm Swastik! Welcome to my",
-          "text-2xl sm:text-3xl font-georama",
+          "text-2xl sm:text-3xl font-georama text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)] tracking-wide",
           100
         )}
       </p>
       <h1 ref={titleRef} className="mt-7">
         {renderText(
           "portfolio",
-          "text-8xl sm:text-7xl md:text-9xl italic font-georama" 
+          "text-8xl sm:text-7xl md:text-9xl italic font-georama text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)] tracking-wide" 
         )}
       </h1>
       <div className="small-screen">
-        <p>Mobile version is still in progress. For the full experience, use a larger screen or visit the desktop site. </p>
+        <p className="text-white">Mobile version is still in progress. For the full experience, use a larger screen or visit the desktop site. </p>
         <br />
-        <a href="https://swastiksharma15.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" className="flex-center">For Mobile Devices visit here</a>
+        <a href="https://swastiksharma15.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" className="flex-center text-blue-100">For Mobile Devices visit here</a>
       </div>
     </section>
   );
