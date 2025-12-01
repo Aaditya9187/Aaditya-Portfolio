@@ -193,11 +193,11 @@ const gallery = [
   },
   {
     id: 2,
-    img: "/images/wallpaper.png",
+    img: "/images/gal3.jpg",
   },
   {
     id: 3,
-    img: "/images/gal3.jpg",
+    img: "/images/gal5.png",
   },
   {
     id: 4,
@@ -213,7 +213,7 @@ const gallery = [
   },
   {
     id: 7,
-    img: "/images/gal5.png",
+    img: "/images/wallpaper.png",
   },
   {
     id: 8,
@@ -225,7 +225,7 @@ const gallery = [
   },
   {
     id: 10,
-    img: "/images/gal9.webp",
+    img: "/images/gal15.jpg",
   },
   {
     id: 11,
@@ -249,12 +249,27 @@ const gallery = [
   },
   {
     id: 16,
-    img: "/images/gal15.jpg",
+    img: "/images/gal9.webp",
   },
   {
     id: 17,
     img: "/images/gal16.jpg",
   }
+];
+
+const songs = [
+  {
+    id: 1,
+    title: "City Ruins - ",
+    src: "/audio/loop.mp3",
+    cover: "/images/gal1.png",
+  },
+  {
+    id: 2,
+    title: "City Ruins - Rays of Light",
+    src: "/audio/City Ruins - Rays of Light (NieR_Automata Original Soundtrack)Audio.mp3",
+    cover: "/images/gal4.png",
+  },
 ];
 
 export {
@@ -266,6 +281,7 @@ export {
   socials,
   photosLinks,
   gallery,
+  songs,
 };
 
 const WORK_LOCATION = {
@@ -703,6 +719,7 @@ const WINDOW_CONFIG = {
   terminal: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
+  music: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
