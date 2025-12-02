@@ -6,12 +6,21 @@ import { Mail, Search } from 'lucide-react';
 const Photos = () => {
 
   const { openWindow } = useWindowStore();
+
+  const email = 'swastik15.sharma.work@gmail.com';
+
   return (
     <div className="flex flex-col h-full">
       <div id='window-header'>
         <WindowControls target="photos" />
-        <div className='w-full flex justify-end items-center gap-3 text-gray-500'>
-          <Mail className='icon' />
+        <div className='w-full flex justify-end items-center gap-3'>
+          <a
+            href={`mailto:${email}`}
+            title={`Email: ${email}`}
+            className='p-2 hover:bg-gray-200 rounded-md transition-colors'
+          >
+            <Mail size={18} />
+          </a>
           <Search className='icon' />
         </div>
       </div>
