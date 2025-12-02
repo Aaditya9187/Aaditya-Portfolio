@@ -8,13 +8,13 @@ const WindowWrapper = (Component, windowKey) => {
 
   const Wrapped = (props) => {
     const { focusWindow, windows } = useWindowStore();
-    const { isOpen, isMinimized, isMaximized, zIndex } = windows[windowKey];
+    const { isOpen, isMaximized, zIndex } = windows[windowKey];
     const ref = useRef(null);
 
     // open animation
     useGSAP(() => {
       const el = ref.current;
-      if (!el || !isOpen || isMinimized) return;
+      if (!el || !isOpen) return;
 
       el.style.display = 'block';
 
@@ -29,14 +29,14 @@ const WindowWrapper = (Component, windowKey) => {
         duration: 0.4,
         ease: 'power3.out'
       })
-    }, [isOpen, isMinimized]);
+    }, [isOpen]);
 
-    // draggable handling (disable when maximized or minimized or closed)
+    // draggable handling (disable when maximized or closed)
     useGSAP(() => {
       const el = ref.current;
       if (!el) return;
 
-      if (!isOpen || isMaximized || isMinimized) {
+      if (!isOpen || isMaximized) {
         // ensure any previous Draggable is killed
         Draggable.get(el)?.kill();
         return;
@@ -44,19 +44,18 @@ const WindowWrapper = (Component, windowKey) => {
 
       const [ instance ] = Draggable.create(el, {
         onPress: () => focusWindow(windowKey),
-        trigger: el.querySelector('.window-drag-handle'),
         ignore: "input[type='range'], button, .sliders"
       })
 
       return () => instance.kill();
-    }, [isOpen, isMaximized, isMinimized, focusWindow]);
+    }, [isOpen, isMaximized, focusWindow]);
 
     useLayoutEffect(() => {
       const el = ref.current;
       if(!el) return;
 
-      // visibility based on open and minimized state
-      el.style.display = isOpen && !isMinimized ? 'block' : 'none';
+      // visibility based on open state
+      el.style.display = isOpen ? 'block' : 'none';
 
       // toggle maximized styles
       if (isMaximized) {
@@ -121,7 +120,7 @@ const WindowWrapper = (Component, windowKey) => {
         }
         // keep previously dragged top/left as set by Draggable (restored above if existed)
       }
-    }, [isOpen, isMinimized, isMaximized]);
+    }, [isOpen, isMaximized]);
 
 
     return (
