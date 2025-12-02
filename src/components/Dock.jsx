@@ -1,13 +1,15 @@
-import { dockApps } from '#constants';
+import { dockApps, locations } from '#constants';
 import React, { useRef } from 'react'
 import { Tooltip } from 'react-tooltip';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import useWindowStore from '#store/window'; 
+import useWindowStore from '#store/window';
+import useLocationStore from '#store/location';
 
 const Dock = () => {
 
   const { openWindow, closeWindow, windows} = useWindowStore();
+  const { setActiveLocation } = useLocationStore();
 
   const dockRef = useRef(null);
 
@@ -72,12 +74,16 @@ const Dock = () => {
       closeWindow(app.id);
     } else {
       openWindow(app.id);
+      // If action is specified, perform it (e.g., "trash" opens Trash location)
+      if (app.action === 'trash') {
+        setActiveLocation(locations.trash);
+      }
     }
   }
   return (
     <section id='dock'>
       <div ref={dockRef} className='dock-container'>
-        {dockApps.map(({id, name, icon, canOpen}) => (
+        {dockApps.map(({id, name, icon, canOpen, action}) => (
           <div key={id} className='relative flex justify-center'>
             <button 
               type='button' 
@@ -87,7 +93,7 @@ const Dock = () => {
               data-tooltip-content = {name}
               data-tooltip-delay-show = {150}
               disabled= {!canOpen}
-              onClick={() => toggleApp({id, canOpen})}
+              onClick={() => toggleApp({id, canOpen, action})}
             >
               <img 
                 src={`/images/${icon}`}
