@@ -61,23 +61,34 @@ const Dock = () => {
   }, []);
 
   const toggleApp = (app) => {
-    if(!app.canOpen) return;
+    if (!app.canOpen) return;
 
-    const window = windows[app.id];
+    // Special case: Trash icon should open Finder focused on Trash
+    if (app.action === 'trash') {
+      // Ensure Finder window opens and switch Finder to Trash location
+      openWindow('finder');
+      setActiveLocation(locations.trash);
+      return;
+    }
 
-    if (!window) {
+    // Special case: Finder icon should open Finder focused on Work
+    if (app.id === 'finder') {
+      openWindow('finder');
+      setActiveLocation(locations.work);
+      return;
+    }
+
+    const win = windows[app.id];
+
+    if (!win) {
       console.log(`Window not found for app: ${app.id}`);
       return;
     }
 
-    if(window.isOpen) {
+    if (win.isOpen) {
       closeWindow(app.id);
     } else {
       openWindow(app.id);
-      // If action is specified, perform it (e.g., "trash" opens Trash location)
-      if (app.action === 'trash') {
-        setActiveLocation(locations.trash);
-      }
     }
   }
   return (
