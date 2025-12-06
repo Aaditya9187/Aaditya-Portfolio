@@ -1,6 +1,6 @@
 import { WindowControls } from "#components";
 import WindowWrapper from "#hoc/WindowWrapper";
-import { Download } from "lucide-react";
+import { Download, ExternalLink } from "lucide-react";
 import React, { useState } from "react";
 import { pdfjs, Document, Page } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -18,6 +18,15 @@ const Resume = () => {
       <div id="window-header">
         <WindowControls target="resume" />
         <h2>Swastik_Sharma_Frontend_Developer_Resume.pdf</h2>
+        
+        <a
+          href="files/Swastik_Sharma_Frontend_Developer_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Open Resume in New Tab"
+        >
+        <ExternalLink className="icon mr-3" />
+        </a>
 
         <a
           href="files/Swastik_Sharma_Frontend_Developer_Resume.pdf"
