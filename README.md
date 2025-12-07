@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website built with React that mimics the macOS desktop experience. Features a draggable dock, window management system, and various applications including a music player, photo gallery, and more.
 
-![Portfolio Preview](preview.png) <!-- Add a screenshot of your portfolio -->
+![Portfolio Preview](previewReadme.png) <!-- Add a screenshot of your portfolio -->
 
 ## ✨ Features
 
