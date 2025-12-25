@@ -17,10 +17,10 @@ const navLinks = [
 ];
 
 const navIcons = [
-  {
+  /* {
     id: 1,
     img: "/icons/wifi.svg",
-  },
+  }, */
   {
     id: 2,
     img: "/icons/search.svg",
@@ -37,10 +37,10 @@ const navIcons = [
     type: "finder",
     action: "about",
   },
-  {
+  /* {
     id: 5,
     img: "/icons/mode.svg",
-  },
+  }, */
 
 ];
 
@@ -134,7 +134,7 @@ const techStack = [
   },
   {
     category: "Dev Tools",
-    items: ["Git", "GitHub", "npm", "Figma", "DaVinci Resolve"],
+    items: ["Git", "GitHub","Axios", "Jest", "Figma"],
   }
 ];
 
@@ -605,7 +605,7 @@ const WORK_LOCATION = {
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://movieplexapp.vercel.app/",
+          href: "https://swastiksharma15.github.io/Portfolio/",
           position: "top-50 left-20",
         },
         {
@@ -675,7 +675,7 @@ const ABOUT_LOCATION = {
       subtitle: "Meet the Developer Behind the Code",
       image: "/images/swastik.jpg",
       description: [
-        "I’m Swastik, a frontend developer focused on building fast, responsive, and visually sharp web interfaces. I work mainly with React, JavaScript, and modern tooling to craft smooth user experiences backed by clean, maintainable code.",
+        "I’m Swastik, a frontend developer based in India, focused on building fast, responsive, and visually sharp web interfaces. I work mainly with React, JavaScript, and modern tooling to craft smooth user experiences backed by clean, maintainable code.",
         "I care about performance, clarity, and UI polish whether it’s reducing load times, solving annoying UX problems, or animating micro-interactions with GSAP. If something feels slow or clunky, I fix it. Simple.",
         "Outside coding, I work on video editing. It sharpens my eye for pacing, composition, and visual flow skills I carry directly into UI design and motion on the web. Whether it’s timing cuts in a timeline or timing animations in GSAP, the mindset is the same: make every frame feel intentional.",
       ],
@@ -690,19 +690,22 @@ const ABOUT_LOCATION = {
       subtitle: "Tech Stack",
       description: [
         "⚙️ Frontend:",
-        "React.js, JavaScript, Tailwind CSS, GSAP, HTML5, CSS3",
+        "React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, GSAP",
+        "",
+        "🧠 State Management:",
+        "Redux, Redux Toolkit, Zustand",
         "",
         "🛠️ Tools & Build Systems:",
-        "Vite, npm, Git, GitHub, Figma, DaVinci Resolve",
+        "Vite, npm, Git, GitHub, Axios, Jest, Figma",
         "",
         "🎨 UI & Workflow:",
-        "Responsive Design, State Management, Animations, Micro-interactions, Component Architecture, Performance Optimization",
+        "Responsive Design, Component Architecture, Animations, Micro-interactions, Performance Optimization, Accessibility Basics",
         "",
-        "📡 APIs:",
-        "REST APIs, TMDB API, JSON data handling",
+        "📡 APIs & Data:",
+        "REST APIs, TMDB API, JSON handling, Async data fetching",
         "",
-        "💾 Other:",
-        "Python, SQL, Machine Learning",
+        "📱 Other / Supporting:",
+        "Python, SQL, Machine Learning, React Native",
       ],
     },
   ],
