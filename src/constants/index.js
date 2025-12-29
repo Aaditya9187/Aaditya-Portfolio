@@ -364,13 +364,13 @@ const WORK_LOCATION = {
   kind: "folder",
   children: [
 
-    // ▶ Project 2
+    // ▶ Project 1 Cyberpunk
     {
       id: 5,
       name: "Cyberpunk",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-45 right-5",
+      position: "top-45 right-80 ",
       windowPosition: "top-[10vh] left-15", // optional: Finder window position
       children: [
         {
@@ -417,14 +417,14 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 1
+    // ▶ Project 2 ShopKar
     {
       id: 6,
       name: "ShopKar",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-25", // icon position inside Finder
-      windowPosition: "top-[25vh] left-25",
+      position: "top-10 left-0", // icon position inside Finder
+      windowPosition: "top-[25vh] left-30",
       children: [
         {
           id: 1,
@@ -470,13 +470,13 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 3
+    // ▶ Project 3 Tidy Tasks
     {
       id: 7,
       name: "Tidy Tasks",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-70",
+      position: "top-10 left-50",
       windowPosition: "top-[40vh] left-15",
       children: [
         {
@@ -523,14 +523,14 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 4
+    // ▶ Project 4 Movie Plex
     {
       id: 8,
       name: "Movie Plex",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-75 right-55",
-      windowPosition: "top-[55vh] left-25",
+      position: "top-80 right-55",
+      windowPosition: "top-[55vh] left-30",
       children: [
         {
           id: 1,
@@ -576,13 +576,13 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 5
+    // ▶ Project 5 Mojito Mix
     {
       id: 9,
       name: "Mojito Mix",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-45 right-100",
+      position: "top-80 right-5",
       windowPosition: "top-[70vh] left-15",
       children: [
         {
@@ -605,7 +605,7 @@ const WORK_LOCATION = {
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://swastiksharma15.github.io/Portfolio/",
+          href: "https://mojitomix.vercel.app",
           position: "top-50 left-20",
         },
         {
@@ -625,6 +625,59 @@ const WORK_LOCATION = {
           fileType: "fig",
           href: "https://github.com/SwastikSharma15/Learning-GSAP",
           position: "top-60 right-20",
+        },
+      ],
+    },
+
+    // ▶ Project 6 VS Code Web IDE
+    {
+      id: 10,
+      name: "VS Code Web IDE",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-45 right-30",
+      windowPosition: "top-[40vh] left-40",
+      children: [
+        {
+          id: 1,
+          name: "VS Code.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-15 right-40",
+          description: [
+            "VS Code Web IDE is a browser-based recreation of Visual Studio Code, built to simulate the look, feel, and interaction patterns of a real development environment.",
+            "Instead of a static code viewer, it delivers an immersive IDE-like experience with a file explorer, multi-tab editor, terminal panel, and a VS Code–inspired dark theme.",
+            "Think of it as opening VS Code directly in your browser where files, tabs, and panels behave like a real editor, making the interface familiar and intuitive for developers.",
+            "Built with React, Vite, and modern UI patterns, it focuses on performance, responsiveness, and clean state management, while adding a Canvas-based interactive animation layer for an engaging twist."
+          ],
+        },
+        {
+          id: 2,
+          name: "VSCode.com",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://vs-code-web-ide.vercel.app/",
+          position: "top-20 left-20",
+        },
+        {
+          id: 4,
+          name: "VS Code.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-52 left-80",
+          imageUrl: "/images/vscode.png",
+        },
+        {
+          id: 5,
+          name: "VS Code.github",
+          icon: "/images/plain.png",
+          kind: "file",
+          fileType: "fig",
+          href: "https://github.com/SwastikSharma15/VS-Code-Web-IDE",
+          position: "top-60 right-70",
         },
       ],
     },
