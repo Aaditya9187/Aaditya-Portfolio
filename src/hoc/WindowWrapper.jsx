@@ -129,7 +129,8 @@ const WindowWrapper = (Component, windowKey) => {
         id={windowKey} 
         ref={ref} 
         style={{zIndex}} 
-        className='absolute window-root'>
+        className='absolute window-root'
+        onClick={() => focusWindow(windowKey)}>
           <Component {...props} />
       </section>
     )
