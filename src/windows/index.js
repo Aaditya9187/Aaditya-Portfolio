@@ -8,5 +8,6 @@ import Contact from "./Contact";
 import Photos from "./Photos";
 import Music from "./Music";
 import Trash from "./Trash";
+import VSCode from "./VSCode";
 
-export {Terminal, Safari, Resume, Finder, Text, Image, Contact, Photos, Music, Trash}
+export {Terminal, Safari, Resume, Finder, Text, Image, Contact, Photos, Music, Trash, VSCode}
