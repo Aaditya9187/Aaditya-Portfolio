@@ -5,7 +5,7 @@ import useWindowStore from '#store/window';
 import { Mail, Search } from 'lucide-react';
 const Photos = () => {
 
-  const { openWindow } = useWindowStore();
+  const { openWindow, focusWindow } = useWindowStore();
 
   const email = 'swastik15.sharma.work@gmail.com';
 
@@ -32,7 +32,13 @@ const Photos = () => {
           </h2>
           <ul>
             {photosLinks.map(({id, icon, title}) => (
-              <li key={id}>
+              <li 
+                key={id}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  focusWindow('photos');
+                }}
+              >
                 <img src={icon} alt={title} />
                 <p>{title}</p>
               </li>
@@ -44,15 +50,17 @@ const Photos = () => {
             {gallery.map(({id, img}) => (
               <li 
                 key={id}
-                onClick={() => openWindow('imgfile' , {
-                  id,
-                  name: "Gallery image",
-                  icon: "/images/image.png",
-                  kind: "file",
-                  fileType: "img",
-                  imageUrl: img,
-                })
-                }
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openWindow('imgfile' , {
+                    id,
+                    name: "Gallery image",
+                    icon: "/images/image.png",
+                    kind: "file",
+                    fileType: "img",
+                    imageUrl: img,
+                  });
+                }}
               >
                 <img
                   src={img}

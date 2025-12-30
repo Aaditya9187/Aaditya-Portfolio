@@ -9,7 +9,7 @@ import React from "react";
 
 const Finder = () => {
 
-  const { openWindow } = useWindowStore();
+  const { openWindow, focusWindow } = useWindowStore();
 
   const { activeLocation, setActiveLocation } = useLocationStore();
 
@@ -33,7 +33,11 @@ const Finder = () => {
             className={clsx(
               item.id === activeLocation.id ? "active" : "not-active"
             )}
-            onClick={() => setActiveLocation(item)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setActiveLocation(item);
+              focusWindow('finder');
+            }}
           >
             <img src={item.icon} className="w-4" alt={item.name} loading='lazy' />
             <p className="text-sm font-medium truncate">{item.name}</p>
@@ -62,7 +66,10 @@ const Finder = () => {
             <li
               key={item.id}
               className={item.position}
-              onClick={() => openItem(item)}
+              onClick={(e) => {
+                e.stopPropagation();
+                openItem(item);
+              }}
             >
               <img src={item.icon} alt={item.name} loading='lazy' />
               <p>{item.name}</p>

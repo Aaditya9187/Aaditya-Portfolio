@@ -10,10 +10,8 @@ const useWindowStore = create(
       const win = state.windows[windowKey];
       if (!win) return;
       win.isOpen = true;
-      win.zIndex = state.nextZIndex;
+      win.zIndex = state.nextZIndex++;
       win.data = data ?? win.data;
-      state.nextZIndex++;
-
     }),
     closeWindow: (windowKey) => set((state) => {
       const win = state.windows[windowKey];
