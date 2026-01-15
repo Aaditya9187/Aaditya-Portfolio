@@ -54,7 +54,7 @@ const Photos = () => {
                   e.stopPropagation();
                   openWindow('imgfile' , {
                     id,
-                    name: "Gallery image",
+                    name: "Gallery Image",
                     icon: "/images/image.png",
                     kind: "file",
                     fileType: "img",

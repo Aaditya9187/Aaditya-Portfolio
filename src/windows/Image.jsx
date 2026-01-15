@@ -23,7 +23,7 @@ const ImageFile = () => {
     <div className="flex flex-col h-full">
       <div id='window-header'>
         <WindowControls target="imgfile" />
-        <h2 className="flex items-center justify-center">{name}</h2>
+        <h2 className="flex items-center justify-center font-bold">{name}</h2>
         <button
           onClick={setAsWallpaper}
           className="px-2 py-1 text-xs rounded bg-blue-100 text-blue-700 hover:bg-blue-200"
