@@ -4,7 +4,6 @@ import WindowWrapper from '#hoc/WindowWrapper'
 import { Mail } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import useWeb3Forms from '@web3forms/react'
 
 const Contact = () => {
   const email = 'swastik15.sharma.work@gmail.com'
@@ -12,6 +11,7 @@ const Contact = () => {
   const [isSuccess, setIsSuccess] = useState(false)
   const [result, setResult] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [submissionResults, setSubmissionResults] = useState({ key1: null, key2: null })
 
   // react-hook-form
   const {
@@ -21,27 +21,65 @@ const Contact = () => {
     formState: { errors }
   } = useForm()
 
-  // Web3Forms setup
-  const accessKey = '18536a8d-1f17-4f02-97b1-e5cf2b45e4fb'
+  // Web3Forms setup - send to both emails
+  const accessKey1 = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY_1 || '18536a8d-1f17-4f02-97b1-e5cf2b45e4fb'
+  const accessKey2 = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY_2 || '3632924f-f67c-4571-883a-ae15e8c4ed16'
 
-  const { submit: onSubmit } = useWeb3Forms({
-    access_key: accessKey,
-    settings: {
-      from_name: 'Portfolio – Contact',
-      subject: 'New Contact Message from Portfolio',
-    },
-    onSuccess: (msg) => {
-      setIsSuccess(true)
-      setResult(msg)
-      setSubmitting(false)
-      reset()
-    },
-    onError: (msg) => {
-      setIsSuccess(false)
-      setResult(msg)
-      setSubmitting(false)
+  // Function to submit to both endpoints
+  const submitToBothEndpoints = async (formData) => {
+    setSubmitting(true)
+    setResult('Sending message...')
+    
+    const submitToEndpoint = async (accessKey, keyName) => {
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            from_name: 'macOS Portfolio – Contact',
+            subject: 'New Contact Message from macOS Portfolio',
+            ...formData
+          })
+        })
+        
+        const result = await response.json()
+        return { success: response.ok, message: result.message, keyName }
+      } catch (error) {
+        return { success: false, message: error.message, keyName }
+      }
     }
-  })
+
+    // Submit to both endpoints simultaneously
+    const [result1, result2] = await Promise.all([
+      submitToEndpoint(accessKey1, 'primary'),
+      submitToEndpoint(accessKey2, 'secondary')
+    ])
+
+    setSubmissionResults({ key1: result1, key2: result2 })
+
+    // Check results
+    const bothSuccessful = result1.success && result2.success
+    const oneSuccessful = result1.success || result2.success
+
+    if (bothSuccessful) {
+      setIsSuccess(true)
+      setResult('Message sent successfully to both email addresses!')
+      reset()
+    } else if (oneSuccessful) {
+      setIsSuccess(true)
+      setResult(`Message sent successfully to ${result1.success ? 'primary' : 'secondary'} email address. ${!result1.success ? result1.message : result2.message}`)
+      reset()
+    } else {
+      setIsSuccess(false)
+      setResult(`Failed to send message. Primary: ${result1.message}, Secondary: ${result2.message}`)
+    }
+
+    setSubmitting(false)
+  }
 
   useEffect(() => {
     if (isSuccess && showModal) {
@@ -152,9 +190,8 @@ const Contact = () => {
 
             <form
               className='p-5 space-y-4'
-              onSubmit={handleSubmit((data, e) => {
-                setSubmitting(true)
-                onSubmit({ ...data })
+              onSubmit={handleSubmit((data) => {
+                submitToBothEndpoints(data)
               })}
             >
               <div className='grid gap-4 sm:grid-cols-2'>
