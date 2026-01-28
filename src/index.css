@@ -98,7 +98,7 @@ body {
 
       /* Resize music icon */
       img[src*="music.png"] {
-        @apply scale-92;
+        @apply scale-93;
       }
 
       /* Resize trash icon */
@@ -108,7 +108,12 @@ body {
 
       /* Resize code icon */
       img[src*="code.png"] {
-        @apply scale-82;
+        @apply scale-105;
+      }
+
+      /* Resize NER icon - increase by 1px equivalent */
+      img[src*="game.png"] {
+        @apply scale-105;
       }
     }
   }
@@ -455,6 +460,22 @@ body {
 
   #vscode {
     @apply w-6xl h-[700px] absolute top-10 right-20 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+
+    #window-header {
+      @apply flex items-center justify-between bg-gray-50 border-b border-gray-200 select-none text-sm text-gray-400;
+
+      h2 {
+        @apply flex-1 text-center font-bold text-sm;
+      }
+
+      a {
+        @apply flex items-center;
+      }
+    }
+  }
+
+  #ner {
+    @apply w-5xl h-[600px] absolute top-20 left-20 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     #window-header {
       @apply flex items-center justify-between bg-gray-50 border-b border-gray-200 select-none text-sm text-gray-400;
