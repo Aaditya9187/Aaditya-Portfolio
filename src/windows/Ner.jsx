@@ -2,10 +2,15 @@ import { WindowControls } from '#components'
 import WindowWrapper from '#hoc/WindowWrapper'
 import { ExternalLink } from 'lucide-react'
 import useWindowStore from '#store/window'
-import { useEffect } from 'react'
+import useAudioStore from '#store/audio'
+import { useEffect, useRef } from 'react'
 
 const Ner = () => {
   const { focusWindow, windows } = useWindowStore();
+  const { pause } = useAudioStore();
+  const iframeRef = useRef(null);
+  const isOpen = windows['ner']?.isOpen;
+  
   const isFocused = (() => {
     const openWindows = Object.values(windows).filter(w => w.isOpen);
     const maxZ = openWindows.reduce((m, w) => Math.max(m, w.zIndex), 0);
@@ -22,6 +27,59 @@ const Ner = () => {
     window.addEventListener('message', handler);
     return () => window.removeEventListener('message', handler);
   }, [focusWindow]);
+
+  // Handle audio cleanup when window is closed
+  useEffect(() => {
+    if (!isOpen && iframeRef.current) {
+      // Stop main audio store
+      pause();
+      
+      // Send stop message to iframe
+      try {
+        iframeRef.current.contentWindow?.postMessage({ 
+          type: 'pause-all-audio'
+        }, '*');
+      } catch (e) {
+        // Ignore postMessage errors
+      }
+      
+      // Force stop by blanking iframe after a short delay
+      const timeoutId = setTimeout(() => {
+        if (iframeRef.current && !isOpen) {
+          const src = iframeRef.current.src;
+          iframeRef.current.src = 'about:blank';
+          iframeRef.current.dataset.originalSrc = src;
+        }
+      }, 100);
+      
+      return () => clearTimeout(timeoutId);
+    } else if (isOpen && iframeRef.current?.dataset.originalSrc) {
+      // Restore iframe when reopening
+      const src = iframeRef.current.dataset.originalSrc;
+      iframeRef.current.src = src;
+      delete iframeRef.current.dataset.originalSrc;
+    }
+  }, [isOpen, pause]);
+
+  // Cleanup on component unmount
+  useEffect(() => {
+    return () => {
+      // Stop main audio when component unmounts
+      pause();
+      
+      // Try to stop iframe audio on unmount
+      if (iframeRef.current) {
+        try {
+          iframeRef.current.contentWindow?.postMessage({ 
+            type: 'pause-all-audio',
+            action: 'stop-audio' 
+          }, '*');
+        } catch (error) {
+          // Ignore errors on unmount
+        }
+      }
+    };
+  }, [pause]);
 
   return (
     <>
@@ -68,6 +126,7 @@ const Ner = () => {
           />
         )}
         <iframe
+          ref={iframeRef}
           src="https://slapner.vercel.app"
           style={{
             width: '100%',
