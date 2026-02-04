@@ -143,7 +143,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Swastik Sharma**
 - GitHub: [@SwastikSharma15](https://github.com/SwastikSharma15)
 - LinkedIn: [Swastik Sharma](https://linkedin.com/in/swastiksharma15)
-- Portfolio: [swastikmacolio.vercel.app](https://swastikmacolio.vercel.app)
+- Portfolio: [swastikmacolio.in](https://swastikmacolio.in)
 
 ## 🙏 Acknowledgments
 
