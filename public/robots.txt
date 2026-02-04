@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://swastikmacolio.vercel.app/sitemap.xml
+Sitemap: https://www.swastikmacolio.in/sitemap.xml
