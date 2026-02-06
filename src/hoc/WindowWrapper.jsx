@@ -46,8 +46,8 @@ const WindowWrapper = (Component, windowKey) => {
         onPress: () => focusWindow(windowKey),
         trigger: el.querySelector('.window-drag-handle'),
         ignore: "input[type='range'], button, .sliders",
-        cursor: "move",  // More visible on white backgrounds
-        activeCursor: "move"
+        cursor: "grab",  // More visible on white backgrounds
+        activeCursor: "grabbing"
       })
 
       return () => instance.kill();

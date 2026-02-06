@@ -38,11 +38,11 @@ body {
 
   /* Custom black grab cursor - using move cursor as fallback */
   .window-drag-handle {
-    cursor: move !important;
+    cursor: grab !important;
   }
   
   .window-drag-handle:active {
-    cursor: move !important;
+    cursor: grabbing !important;
   }
 
   nav {
@@ -112,8 +112,9 @@ body {
       border-radius: 0.375rem;
       background-color: transparent;
       pointer-events: none;
-      width: 180px; /* Approximate width of logo + text */
+      width: 190px; /* Approximate width of logo + text */
       height: 30px; /* Approximate height */
+      left: 0.7rem;
     }
 
     .datetime-placeholder {
@@ -124,8 +125,8 @@ body {
       pointer-events: none;
       width: 140px; /* Approximate width of date/time */
       height: 24px; /* Approximate height */
-      top: 5;
-      right: 1rem;
+      top: 0.8rem;
+      right: 0.7rem;
     }
 
     time {
@@ -142,6 +143,7 @@ body {
 
   #welcome {
     @apply text-gray-200 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-10;
+    user-select: none;
 
     .small-screen {
       @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-20;
@@ -150,6 +152,19 @@ body {
         @apply flex-1 text-[16px] text-center font-roboto text-gray-400;
       }
     }
+  }
+
+  .welcome-placeholder {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.075rem dashed rgba(255, 255, 255, 0.5);
+    border-radius: 0.375rem;
+    background-color: transparent;
+    pointer-events: none;
+    width: 600px;
+    height: 200px;
   }
 
   #dock {
