@@ -8,15 +8,26 @@ const FONT_WEIGHTS = {
   title: { min: 400, max: 900, default: 400},
 }
 
+// Memoized character span component
+const CharSpan = React.memo(({ char, className, baseWeight }) => (
+  <span
+    className={className}
+    style={{ fontVariationSettings: `'wght' ${baseWeight}` }}
+  >
+    {char === "" ? "\u00A0" : char}
+  </span>
+));
+
+CharSpan.displayName = 'CharSpan';
+
 const renderText = (text, className, baseWeight = 400) => {
   return [...text].map((char, i) => (
-    <span
+    <CharSpan
       key={i}
+      char={char}
       className={className}
-      style={{ fontVariationSettings: `'wght' ${baseWeight}` }}
-    >
-      {char === "" ? "\u00A0" : char}
-    </span>
+      baseWeight={baseWeight}
+    />
   ));
 };
 
@@ -130,14 +141,14 @@ const Welcome = () => {
         <p ref={subtitleRef}>
           {renderText(
             "Hey, I'm Swastik! Welcome to my",
-            "text-xl sm:text-3xl font-georama text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)] tracking-wide",
+            "text-xl sm:text-3xl font-georama text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] tracking-wide",
             100
           )}
         </p>
         <h1 ref={titleRef} className="mt-7">
           {renderText(
             "portfolio",
-            "text-8xl sm:text-7xl md:text-9xl italic font-georama text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)] tracking-wide" 
+            "text-8xl sm:text-7xl md:text-9xl italic font-georama text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] tracking-wide" 
           )}
         </h1>
         <div className="small-screen">

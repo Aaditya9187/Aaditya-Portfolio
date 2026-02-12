@@ -111,7 +111,7 @@ const Contact = () => {
           alt='Swastik'
           loading='lazy'
           className={clsx(
-            'object-cover object-center object-top rounded-xl',
+            'object-cover object-top rounded-xl',
             isMaximized ? 'w-60 h-40' : 'w-30 h-20'
           )}
         />
