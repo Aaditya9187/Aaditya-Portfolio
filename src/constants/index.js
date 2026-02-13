@@ -163,7 +163,7 @@ const socials = [
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#05b6f6",
-    link: "https://www.linkedin.com",
+    link: "https://www.linkedin.com/in/aaditya-chhatraliya-b5889b3b0/",
   },
   {
     id: 3,
@@ -221,11 +221,11 @@ const gallery = [
   },
   {
     id: 5,
-    img: "/images/gal1.png",
+    img: "/images/gal1.jpg",
   },
   {
     id: 6,
-    img: "/images/gal6.png",
+    img: "/images/gal6.jpg",
   },
   {
     id: 7,
@@ -257,7 +257,7 @@ const gallery = [
   },
   {
     id: 14,
-    img: "/images/gal13.webp",
+    img: "/images/gal13.jpg",
   },
   {
     id: 15,
@@ -270,6 +270,10 @@ const gallery = [
   {
     id: 17,
     img: "/images/gal16.jpg",
+  },
+  {
+    id: 18,
+    img: "/images/gal17.jpg",
   }
 ];
 
@@ -725,7 +729,7 @@ const ABOUT_LOCATION = {
       icon: "/images/safari.png",
       kind: "file",
       fileType: "url",
-      href: "https://www.linkedin.com",
+      href: "https://www.linkedin.com/in/aaditya-chhatraliya-b5889b3b0/",
       position: "top-60 left-50",
     },
     {

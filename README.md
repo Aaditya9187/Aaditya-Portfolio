@@ -141,9 +141,9 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👤 Author
 
 **Swastik Sharma**
-- GitHub: [@SwastikSharma15](https://github.com/SwastikSharma15)
-- LinkedIn: [Swastik Sharma](https://linkedin.com/in/swastiksharma15)
-- Portfolio: [swastikmacolio.in](https://swastikmacolio.in)
+- GitHub: [@SwastikSharma15](https://github.com/Aaditya9187/)
+- LinkedIn: [Swastik Sharma](https://linkedin.com/)
+- Portfolio: [swastikmacolio.in]()
 
 ## 🙏 Acknowledgments
 
