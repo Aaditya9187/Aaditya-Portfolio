@@ -178,7 +178,7 @@ const NavBar = () => {
         <div className="logo-portfolio-container" ref={logoPortfolioRef}>
           <img src="/images/logo.svg" alt="logo" />
           <div className="portfolio-wrapper" ref={wrapperRef}>
-            <p className="font-bold portfolio-text">Swastik's Portfolio</p>
+            <p className="font-bold portfolio-text">Aaditya's Portfolio</p>
             <div className="portfolio-text-container">
               <div className="overlay-gif" ref={gifRef}></div>
             </div>

@@ -156,28 +156,21 @@ const socials = [
     text: "Github",
     icon: "/icons/github.svg",
     bg: "#f4656b",
-    link: "https://github.com/SwastikSharma15",
+    link: "https://github.com/Aaditya9187",
   },
   {
     id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#05b6f6",
-    link: "https://www.linkedin.com/in/swastik15sharma/",
-  },
-  {
-    id: 2,
-    text: "Youtube",
-    icon: "/icons/youtube.svg",
-    bg: "#4bcb63",
-    link: "https://www.youtube.com/@SpeedX_",
+    link: "https://www.linkedin.com",
   },
   {
     id: 3,
     text: "Discord",
     icon: "/icons/discord.svg",
     bg: "#ff866b",
-    link: "https://discord.gg/sSxmkzXwv4",
+    link: "https://discord.gg/JZ7AeCMF",
   },
 ];
 
