@@ -27,7 +27,7 @@ const Contact = () => {
   } = useForm()
 
   // Web3Forms Access Key (ONLY ONE)
-  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY_1 || 'web3form access key';
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY_1 || '25419b85-570d-48b2-876c-bc768763be94';
 
   // Submit Form (Single Endpoint)
   const submitForm = async (formData) => {
