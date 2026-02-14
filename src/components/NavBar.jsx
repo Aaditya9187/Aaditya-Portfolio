@@ -159,8 +159,9 @@ const NavBar = () => {
 
     openWindow(type);
   };
+    
 
-  const handleIconClick = ({ type, action }) => {
+  const handleIconClick = ({ type, action, resume }) => {
     if (!type) return;
     
     openWindow(type);
@@ -168,6 +169,9 @@ const NavBar = () => {
     // If action is specified, perform it (e.g., "about" opens About me location)
     if (action === 'about') {
       setActiveLocation(locations.about);
+    }
+    if (action === 'resume') {
+      setActiveLocation(locations.resume);
     }
   }
 

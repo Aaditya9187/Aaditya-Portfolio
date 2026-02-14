@@ -77,8 +77,8 @@ const dockApps = [
   },
   {
     id: "vscode",
-    name: "VS Code",
-    icon: "code2.png",
+    name: "Deal Drop",
+    icon: "deal-drop.png",
     canOpen: true,
   },
   {
@@ -89,8 +89,8 @@ const dockApps = [
   },
   {
     id: "ner",
-    name: "SlapNer",
-    icon: "game.png", // You can update this later
+    name: "Weather App",
+    icon: "weather.webp", // You can update this later
     canOpen: true,
   },
   {
@@ -829,7 +829,7 @@ const TRASH_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-10 left-10",
-      imageUrl: "/images/trash-1.png",
+      imageUrl: "/images/logo.png",
     },
     {
       id: 4,
@@ -838,7 +838,7 @@ const TRASH_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-65 left-80",
-      imageUrl: "/images/trash-4.jpg",
+      imageUrl: "/images/trash-code.jpg",
     },
     {
       id: 3,
@@ -847,7 +847,7 @@ const TRASH_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-55 left-30",
-      imageUrl: "/images/trash-3.jpg",
+      imageUrl: "/images/trash-design.png",
     },
     {
       id: 2,
@@ -856,7 +856,7 @@ const TRASH_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-20 left-55",
-      imageUrl: "/images/trash-2.jpg",
+      imageUrl: "/images/trash-design2.png",
     },
     {
       id: 5,

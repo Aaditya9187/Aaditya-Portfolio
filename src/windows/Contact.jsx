@@ -99,7 +99,7 @@ const Contact = () => {
       <div className="p-5 space-y-5">
         <img
           src="/images/Aaditya.png"
-          alt="Swastik"
+          alt="Aaditya"
           loading="lazy"
           className={clsx(
             'object-cover object-top rounded-xl',
@@ -110,7 +110,7 @@ const Contact = () => {
         <h3>Let's Connect</h3>
 
         <p>
-          Open for work and collaboration. Write me if you need something built.
+          Open for work of Web Development and Designing. Contact me if you need something related to it or any other services.
         </p>
 
         <p>{email}</p>

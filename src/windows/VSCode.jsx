@@ -31,9 +31,9 @@ const VSCode = () => {
         style={{ backgroundColor: '#f3f4f6' }}
       >
         <WindowControls target="vscode" />
-        <h2>VS Code Web IDE</h2>
+        <h2>Deal Drop</h2>
         <a
-          href="https://vs-code-web-ide.vercel.app/"
+          href="https://deal-drop.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
           title="Open VS Code in New Tab"
@@ -68,7 +68,7 @@ const VSCode = () => {
           />
         )}
         <iframe
-          src="https://vs-code-web-ide.vercel.app/"
+          src="https://deal-drop.vercel.app"
           style={{
             width: '100%',
             height: '100%',

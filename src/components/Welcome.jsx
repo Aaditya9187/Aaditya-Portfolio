@@ -2,10 +2,11 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Draggable } from "gsap/Draggable";
+import MobileGate from "./MobileGate";
 
 const FONT_WEIGHTS = {
-  subtitle: { min: 100, max:400, default: 100},
-  title: { min: 400, max: 900, default: 400},
+  subtitle: { min: 100, max: 400, default: 100 },
+  title: { min: 400, max: 900, default: 400 },
 }
 
 // Memoized character span component
@@ -32,11 +33,11 @@ const renderText = (text, className, baseWeight = 400) => {
 };
 
 const setupTextHover = (container, type) => {
-  if (!container) return () => {};
+  if (!container) return () => { };
 
   const letters = container.querySelectorAll("span");
 
-  const { min, max, default: base} = FONT_WEIGHTS[type];
+  const { min, max, default: base } = FONT_WEIGHTS[type];
 
   const animateLetter = (letter, weight, duration = 0.25) => {
     return gsap.to(letter, {
@@ -47,15 +48,15 @@ const setupTextHover = (container, type) => {
   };
 
   const handleMouseMove = (e) => {
-    const {left} = container.getBoundingClientRect();
+    const { left } = container.getBoundingClientRect();
     const mouseX = e.clientX - left;
 
     letters.forEach((letter) => {
-      const { left: l, width: w} = letter.getBoundingClientRect();
+      const { left: l, width: w } = letter.getBoundingClientRect();
       const distance = Math.abs(mouseX - (l - left + w / 2));
-      const intensity = Math.exp(-(distance ** 2)/ 20000);
+      const intensity = Math.exp(-(distance ** 2) / 20000);
 
-      animateLetter(letter, min + (max-min) * intensity); 
+      animateLetter(letter, min + (max - min) * intensity);
     })
   }
 
@@ -104,13 +105,13 @@ const Welcome = () => {
           gsap.to(welcomePlaceholder, { opacity: 1, duration: 0.2 });
         },
         onDrag: function () {
-          const isWithinSnapZone = 
-            Math.abs(this.x) < snapThreshold && 
+          const isWithinSnapZone =
+            Math.abs(this.x) < snapThreshold &&
             Math.abs(this.y) < snapThreshold;
         },
         onDragEnd: function () {
-          const isWithinSnapZone = 
-            Math.abs(this.x) < snapThreshold && 
+          const isWithinSnapZone =
+            Math.abs(this.x) < snapThreshold &&
             Math.abs(this.y) < snapThreshold;
 
           if (isWithinSnapZone) {
@@ -122,7 +123,7 @@ const Welcome = () => {
               ease: "power2.out",
             });
           }
-          
+
           // Hide placeholder
           gsap.to(welcomePlaceholder, { opacity: 0, duration: 0.2 });
         }
@@ -148,16 +149,14 @@ const Welcome = () => {
         <h1 ref={titleRef} className="mt-7">
           {renderText(
             "portfolio",
-            "text-8xl sm:text-7xl md:text-9xl italic font-georama text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] tracking-wide" 
+            "text-8xl sm:text-7xl md:text-9xl italic font-georama text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] tracking-wide"
           )}
         </h1>
-        <div className="small-screen">
-          <p className="text-white">Mobile version is still in progress. For the full experience, use a larger screen or visit the desktop site. </p>
-          <br />
-          <a href="https://swastiksharma15.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" className="flex-center text-blue-100">For Mobile Devices visit here</a>
+        <div className="fixed inset-0 flex items-center justify-center lg:hidden bg-black overflow-hidden px-5">
+          <MobileGate />
         </div>
       </section>
-      
+
       {/* Placeholder for welcome text */}
       <div className="welcome-placeholder" ref={welcomePlaceholderRef}></div>
     </>

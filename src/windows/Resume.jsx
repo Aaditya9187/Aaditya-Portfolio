@@ -17,10 +17,10 @@ const Resume = () => {
       {/* Header */}
       <div id="window-header">
         <WindowControls target="resume" />
-        <h2>Swastik_Sharma_Frontend_Developer_Resume.pdf</h2>
+        <h2>Resume.pdf</h2>
         
         <a
-          href="files/Swastik_Sharma_Frontend_Developer_Resume.pdf"
+          href="files/Aaditya-Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           title="Open Resume in New Tab"
@@ -29,7 +29,7 @@ const Resume = () => {
         </a>
 
         <a
-          href="files/Swastik_Sharma_Frontend_Developer_Resume.pdf"
+          href="files/Aaditya-Resume.pdf"
           download
           title="Download Resume"
         >
@@ -41,7 +41,7 @@ const Resume = () => {
       <div className="flex-1 overflow-y-auto bg-gray-100 px-4">
         <div className="flex justify-center py-4">
           <Document
-            file="files/Swastik_Sharma_Frontend_Developer_Resume.pdf"
+            file="files/Aaditya-Resume.pdf"
             onLoadSuccess={({ numPages }) => setNumPages(numPages)}
           >
             {Array.from(new Array(numPages), (_, index) => (
