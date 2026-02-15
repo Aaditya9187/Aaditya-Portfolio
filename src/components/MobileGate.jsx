@@ -23,7 +23,7 @@ export default function MobileGate() {
         if (!isMobile) return;
 
         if (count === 0) {
-            window.location.href = "https://aaditya-3d-dev.vercel.app/";
+            window.location.href = "https://aaditya-dev.vercel.app";
             return;
         }
 
@@ -94,7 +94,7 @@ export default function MobileGate() {
 
                 {/* Signature */}
                 <p className="text-[11px] text-gray-500 mt-5 tracking-wide">
-                    Built by Aaditya Chhatraliya • Product Engineer
+                    Built by Aaditya Chhatraliya • Web Developer
                 </p>
 
             </div>

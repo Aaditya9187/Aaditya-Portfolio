@@ -52,7 +52,7 @@ const Finder = () => {
       <div id="window-header" className="window-drag-handle">
         <WindowControls target="finder" />
         <h2 className="font-bold">
-          Swastik's Portfolio
+          Aaditya's Portfolio
         </h2>
         <Search className="icon" />
       </div>
