@@ -648,7 +648,7 @@ const ABOUT_LOCATION = {
     },
     {
       id: 2,
-      name: "Swastik.linkedin",
+      name: "Aaditya.linkedin",
       icon: "/images/safari.png",
       kind: "file",
       fileType: "url",
