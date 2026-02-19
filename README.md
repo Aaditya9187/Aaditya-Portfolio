@@ -130,20 +130,12 @@ This project can be deployed to:
 
 Make sure to configure the base path if deploying to a subdirectory.
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](link-to-issues).
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 👤 Author
 
 **Swastik Sharma**
-- GitHub: [@SwastikSharma15](https://github.com/Aaditya9187/)
-- LinkedIn: [Swastik Sharma](https://linkedin.com/)
-- Portfolio: [swastikmacolio.in]()
+- GitHub: [@Aaditya9187](https://github.com/Aaditya9187/)
+- LinkedIn: [Aaditya Chhatraliya](https://www.linkedin.com/in/aaditya-chhatraliya-2b8981392/)
+- Portfolio: [aaditya-creates.verce.app](https://aaditya-creates.vercel.app/)
 
 ## 🙏 Acknowledgments
 
