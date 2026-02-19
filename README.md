@@ -132,7 +132,7 @@ Make sure to configure the base path if deploying to a subdirectory.
 
 ## 👤 Author
 
-**Swastik Sharma**
+**Aaditya Chhatraliya**
 - GitHub: [@Aaditya9187](https://github.com/Aaditya9187/)
 - LinkedIn: [Aaditya Chhatraliya](https://www.linkedin.com/in/aaditya-chhatraliya-2b8981392/)
 - Portfolio: [aaditya-creates.verce.app](https://aaditya-creates.vercel.app/)
